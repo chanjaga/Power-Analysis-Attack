@@ -17,7 +17,7 @@ pre_round_key_number = len(pre_round_key)
 round_key_number = 16
 
 # Define the number of power traces that will be observed
-obs_trace_times = 500
+obs_trace_times = 100
 
 # Define a leakage model that simulates the power consumption of the device during encryption.
 def leakage_model(plaintext, pre_round_key):
@@ -50,7 +50,7 @@ def cpa(pre_round_key, plaintext):
     # Identify the pre-round key with the highest correlation coefficient (i.e., the most likely round key)
     round_key_index = np.argmax(result_correlation)
     round_key = pre_round_key[round_key_index]
-
+    result_bin = "".join(map(str,round_key))
     # Convert the round key from binary to hexadecimal
     hex_cal = 0
     for j in range(len(round_key)):

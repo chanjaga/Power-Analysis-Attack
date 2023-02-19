@@ -45,13 +45,14 @@ def cpa(pre_round_key, plaintext):
 
         # Plot the correlation coefficient for each iteration
         plt.plot(result_correlation)
+    plt.ylim(0,0.7)
     plt.show()
 
     # Identify the pre-round key with the highest correlation coefficient (i.e., the most likely round key)
     round_key_index = np.argmax(result_correlation)
     round_key = pre_round_key[round_key_index]
-    result_bin = "".join(map(str,round_key))
     # Convert the round key from binary to hexadecimal
+    result_bin = "".join(map(str,round_key))
     hex_cal = 0
     for j in range(len(round_key)):
         hex_cal += round_key[j]*2**(len(round_key)-1-j)

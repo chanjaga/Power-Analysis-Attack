@@ -46,6 +46,8 @@ def cpa(pre_round_key, plaintext):
         # Plot the correlation coefficient for each iteration
         plt.plot(result_correlation)
     plt.ylim(0,0.7)
+    plt.xlabel("key_candidate")
+    plt.ylabel("correlation")
     plt.show()
 
     # Identify the pre-round key with the highest correlation coefficient (i.e., the most likely round key)

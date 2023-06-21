@@ -30,7 +30,6 @@ for a in itertools.product([0, 1], repeat=8):
 
     # 各ビットに対して減算処理を行う（オーバーフロー無視）
     # a = result - b
-
     # 補数表現で-bを実現
     hosuu_pre = [0, 0, 0, 0, 0, 0, 0, 1]
     minas_b = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -54,10 +53,6 @@ for a in itertools.product([0, 1], repeat=8):
           minas_carry = 0
       minas_b[7-f] = minas_sum   # 加算結果を格納
 
-    #for j in range(8):
-     #   bit1 = result[7-j]   # array1のビット値
-      #  bit2 = minas_b[7-j]    # array2のビット値
-
     # a = result - b
     result_a = [0, 0, 0, 0, 0, 0, 0, 0]
     carry_sub = 0
@@ -73,17 +68,6 @@ for a in itertools.product([0, 1], repeat=8):
           carry_sub = 0
         result_a[7-j] = sum_sub   # 加算結果を格納
 
-    # CMA適用時の加算処理
-    #for j in range(8):
-     #   bit1 = a[7-j]   # array1のビット値
-      #  bit2 = b[7-j]    # array2のビット値
-        
-        # 加算処理
-        # 桁上げ出力は常に0なので加算処理に含めない
-       # sum_bit = bit1 or bit2
-        #result[7-j] = sum_bit   # 加算結果を格納
-
-    
     # 結果を表示
     #a = list(a)
     if list(a) == result_a:

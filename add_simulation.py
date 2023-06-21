@@ -1,6 +1,7 @@
 #オーバフローを無視する加算結果から被加数を減算すると加数が復元できることを確認するプログラム
 
 import itertools
+count = 0
 
 # 2つの8要素の配列を作成し、要素に1または0を代入
 a = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -86,6 +87,7 @@ for a in itertools.product([0, 1], repeat=8):
     # 結果を表示
     #a = list(a)
     if list(a) == result_a:
+      count += 1
       print("復号可能")
       print(f"a:           {list(a)}")
       print(f"b:           {list(b)}")
@@ -93,3 +95,5 @@ for a in itertools.product([0, 1], repeat=8):
     #print(f"mainas_b    {minas_b}")
       print(f"Result:      {result}\n")
       print(f"Result - b = {result_a}\n")
+
+print(f"復号可能回数:      {count}")

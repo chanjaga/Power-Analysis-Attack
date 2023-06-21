@@ -6,12 +6,13 @@ import itertools
 from tqdm import tqdm
 
 count = 0
+#ここでビット幅を指定
 bit_number = 10
 # 2つの8要素の配列を作成し、要素に1または0を代入
 a = [0]*bit_number
 b = [0]*bit_number
 
-# 8ビットの加算を全パターン行う
+# 任意ビットの加算を全パターン行う
 for a in tqdm(itertools.product([0, 1], repeat = bit_number)):
   for b in itertools.product([0, 1], repeat = bit_number):
 
